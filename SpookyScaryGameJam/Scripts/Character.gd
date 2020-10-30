@@ -21,3 +21,6 @@ func _physics_process(delta):
 		velocity.x=0
 	velocity=velocity.normalized()*SPEED
 	var collision=move_and_collide(velocity*delta)
+	
+	if Input.is_action_just_pressed("shoot"):
+		pass
