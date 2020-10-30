@@ -7,6 +7,7 @@ func start(start_position,start_direction):
 	global_position=start_position
 	direction=start_direction
 	velocity=direction.normalized()*SPEED
+	print(1)
 func _ready():
 	pass # Replace with function body.
 
@@ -15,8 +16,11 @@ func _physics_process(delta):
 	if collision:
 		if collision.collider.has_method("hit"):
 			collision.collider.hit()
+		print(2)
 		queue_free()
 
 
 func _on_CollisionShape2D_visibility_changed():
-	queue_free()
+#	print(2)
+#	queue_free()
+	pass
