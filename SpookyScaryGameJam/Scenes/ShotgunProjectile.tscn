@@ -4,11 +4,11 @@
 [ext_resource path="res://Scripts/Projectile.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.59699, 6.67071 )
+extents = Vector2( 6.27221, 6.42019 )
 
-[node name="Projectile" type="KinematicBody2D"]
-collision_layer = 2
-collision_mask = 2
+[node name="ShotgunProjectile" type="KinematicBody2D"]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -16,6 +16,4 @@ shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
-z_index = 2
 texture = ExtResource( 1 )
-[connection signal="visibility_changed" from="CollisionShape2D" to="." method="_on_CollisionShape2D_visibility_changed"]

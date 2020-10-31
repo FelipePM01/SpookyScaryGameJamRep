@@ -2,7 +2,11 @@ extends KinematicBody2D
 var velocity=Vector2(0,0)
 var SPEED=200
 var last_velocity=Vector2(1,0)
-onready var projectile=preload("res://Scenes/Projectile.tscn")
+var municao=[0,0]
+enum Gun {SHOTGUN,MOLOTOV}
+var mode=1
+onready var projectile=preload("res://Scenes/BasicProjectile.tscn")
+onready var shotgun=preload("res://Scenes/ShotgunProjectile.tscn")
 func _ready():
 	pass # Replace with function body.
 
@@ -27,6 +31,12 @@ func _physics_process(delta):
 		last_velocity=velocity
 	
 	if Input.is_action_just_pressed("shoot"):
-		var p=projectile.instance()
-		get_parent().add_child(p)
-		p.start(global_position,last_velocity)
+		if mode==0:
+			var p=projectile.instance()
+			get_parent().add_child(p)
+			p.start(global_position,last_velocity)
+		elif mode==1:
+			for i in range(-2,3):
+				var s=shotgun.instance()
+				get_parent().add_child(s)
+				s.start(global_position,last_velocity.rotated(i*PI/32))
