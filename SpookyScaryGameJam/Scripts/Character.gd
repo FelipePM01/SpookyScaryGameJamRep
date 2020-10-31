@@ -40,3 +40,5 @@ func _physics_process(delta):
 				var s=shotgun.instance()
 				get_parent().add_child(s)
 				s.start(global_position,last_velocity.rotated(i*PI/32))
+	if Input.is_action_just_pressed("swap"):
+		mode=(mode+1)%3
