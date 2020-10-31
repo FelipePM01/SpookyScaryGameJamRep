@@ -18,5 +18,8 @@ func _physics_process(delta):
 			collision.collider.hit()
 		queue_free()
 
+func changeSpeed(speed):
+	
+	SPEED=speed
 
 
