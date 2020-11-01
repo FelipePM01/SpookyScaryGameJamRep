@@ -49,3 +49,8 @@ func _physics_process(delta):
 			municao[Gun.MOLOTOV]-=1
 	if Input.is_action_just_pressed("swap"):
 		mode=(mode+1)%3
+func catch():
+	get_tree().quit()
+	 
+func hit():
+	get_tree().quit()

@@ -9,7 +9,9 @@ extents = Vector2( 32.3445, 32.0899 )
 [sub_resource type="Animation" id=2]
 resource_name = "walking"
 
-[node name="Character" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D" groups=[
+"character",
+]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
