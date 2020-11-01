@@ -1,18 +1,16 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Dracula.gd" type="Script" id=1]
+[ext_resource path="res://Mumia.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 33.811, 31.7087 )
+extents = Vector2( 32.6758, 32.7712 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "attacking"
 length = 2.0
 
-[node name="Dracula" type="KinematicBody2D" groups=[
-"enemies",
-]]
+[node name="Mumia" type="KinematicBody2D"]
 collision_layer = 2
 script = ExtResource( 1 )
 
@@ -20,7 +18,8 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-self_modulate = Color( 0.160784, 1, 1, 1 )
+modulate = Color( 1, 1, 0.364706, 1 )
+self_modulate = Color( 0.741176, 0.764706, 0.0627451, 0.92549 )
 texture = ExtResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

@@ -5,6 +5,7 @@ var last_velocity=Vector2(1,0)
 var municao=[3,3]
 enum Gun {SHOTGUN,MOLOTOV}
 var mode=1
+var life=5
 onready var projectile=preload("res://Scenes/BasicProjectile.tscn")
 onready var shotgun=preload("res://Scenes/ShotgunProjectile.tscn")
 onready var molotov=preload("res://Scenes/Molotov.tscn")
@@ -52,5 +53,8 @@ func _physics_process(delta):
 func catch():
 	get_tree().quit()
 	 
-func hit():
-	get_tree().quit()
+func hit(damage):
+	life-=damage
+	if life<=0:
+		get_tree().quit()
+	

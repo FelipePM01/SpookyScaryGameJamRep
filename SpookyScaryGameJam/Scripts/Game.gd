@@ -1,16 +1,11 @@
 extends Node2D
+enum monsters{ESPANTALHO,FRANKSTEIN,DRACULA,MUMIA}
+var monsters_instance=[preload("res://Scenes/Espantalho.tscn"),preload("res://Scenes/Frankstein.tscn"),preload("res://Scenes/Dracula.tscn"),preload("res://Scenes/Mumia.tscn")]
+var monsters_points=[10,25,20,15]
+var length=4
+var minimum=10
+func spawn(points):
+	var Points=points
+	while(Points>=minimum):
+		var moster=randi()%4
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	$Espantalho.start($Espantalho.global_position,$KinematicBody2D)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

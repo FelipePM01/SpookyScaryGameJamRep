@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Character.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Espantalho.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Game.gd" type="Script" id=3]
 
 [node name="Game" type="Node2D"]
@@ -9,6 +8,3 @@ script = ExtResource( 3 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 336, 192 )
-
-[node name="Espantalho" parent="." instance=ExtResource( 2 )]
-position = Vector2( 915.892, 473.907 )
